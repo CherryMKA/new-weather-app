@@ -51,6 +51,12 @@ return `${day} ${hours} :${minutes}`;
 
     searchCity(searchInput.value);
   }
+  function formatDay(timestamp) {
+    let date= newDate(timestamp * 1000);
+    let days= ["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
+    
+    return days[date.getDay()],
+  }
 
   let searchFormElement=document.querySelector("#search-form");
   searchFormElement.addEventListener("submit",handleSearchSubmit);
