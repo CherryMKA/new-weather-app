@@ -17,6 +17,8 @@ function refreshWeather(response) {
     temperatureElement.innerHTML=Math.round(temperature);
     iconElement.innerHTML=`<img src="${response.data.condition.icon_url}"class
     ="weather-app-icon"/>`;
+
+    getForecast(response.data.city);
 }
   function formatDate(date) {
     let minutes=date.getMinutes();
@@ -91,7 +93,7 @@ return `${day} ${hours} :${minutes}`;
     let forecastElement=document.querySelector("#forecast");
     forecastElement.innerHTML=forecastHTML;
   }
-  
+
   let searchFormElement=document.querySelector("#search-form");
   searchFormElement.addEventListener("submit",handleSearchSubmit);
 
